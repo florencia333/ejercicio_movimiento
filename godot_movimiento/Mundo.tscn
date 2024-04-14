@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dydv0g34m5acj"]
+
+[ext_resource type="Texture2D" uid="uid://o34xu6x1fdcl" path="res://icon.svg" id="1_7c66d"]
+[ext_resource type="Script" path="res://Personaje.gd" id="1_r32me"]
+
+[node name="Mundo" type="Node2D"]
+position = Vector2(1, -2)
+
+[node name="Personaje" type="CharacterBody2D" parent="."]
+position = Vector2(582, 294)
+script = ExtResource("1_r32me")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Personaje"]
+position = Vector2(-282.7, -270.1)
+polygon = PackedVector2Array(379, 204, 520, 204, 520, 357, 380, 357)
+
+[node name="Icon" type="Sprite2D" parent="Personaje"]
+position = Vector2(167, 4)
+texture = ExtResource("1_7c66d")
