@@ -21,22 +21,32 @@ position = Vector2(-51, -4.00001)
 scale = Vector2(0.536133, 0.528161)
 texture = ExtResource("1_7c66d")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Piso" type="StaticBody2D" parent="."]
 
-[node name="BarrierRed" type="Sprite2D" parent="StaticBody2D"]
+[node name="BarrierRed" type="Sprite2D" parent="Piso"]
 position = Vector2(575.5, 616)
 scale = Vector2(5.48095, 1)
 texture = ExtResource("3_o25w7")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Piso"]
 polygon = PackedVector2Array(0, 586, 1152, 584, 1152, 646, 0, 647)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="Obstaculo1" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstaculo1"]
 polygon = PackedVector2Array(539, 527, 647, 528, 647, 582, 541, 583)
 
-[node name="BarrierRed" type="Sprite2D" parent="StaticBody2D2"]
+[node name="BarrierRed" type="Sprite2D" parent="Obstaculo1"]
 position = Vector2(593.625, 558.25)
 scale = Vector2(0.49881, 0.943549)
+texture = ExtResource("3_o25w7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(872, 359, 972, 359, 971, 583, 872, 583)
+
+[node name="BarrierRed" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(921, 473)
+scale = Vector2(0.480952, 3.6129)
 texture = ExtResource("3_o25w7")
