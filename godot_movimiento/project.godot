@@ -14,3 +14,7 @@ config/name="Ejercicio Movimiento"
 run/main_scene="res://Mundo.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[physics]
+
+2d/default_gravity=4500.0

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dydv0g34m5acj"]
+[gd_scene load_steps=5 format=3 uid="uid://dydv0g34m5acj"]
 
 [ext_resource type="Texture2D" uid="uid://o34xu6x1fdcl" path="res://icon.svg" id="1_7c66d"]
 [ext_resource type="Script" path="res://Personaje.gd" id="1_r32me"]
 [ext_resource type="Texture2D" uid="uid://0g73hfxq0x7y" path="res://assets/barrier_red.png" id="3_o25w7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oje83"]
+size = Vector2(68, 68)
 
 [node name="Mundo" type="Node2D"]
 position = Vector2(1, -2)
@@ -11,24 +14,25 @@ position = Vector2(1, -2)
 position = Vector2(582, 294)
 script = ExtResource("1_r32me")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Personaje"]
-position = Vector2(-273.156, -127.75)
-scale = Vector2(0.496454, 0.441177)
-polygon = PackedVector2Array(379, 204, 520, 204, 519.474, 356.734, 380, 357)
-
 [node name="Icon" type="Sprite2D" parent="Personaje"]
 position = Vector2(-51, -4.00001)
 scale = Vector2(0.536133, 0.528161)
 texture = ExtResource("1_7c66d")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
+position = Vector2(-51, -4)
+shape = SubResource("RectangleShape2D_oje83")
+
 [node name="Piso" type="StaticBody2D" parent="."]
 
 [node name="BarrierRed" type="Sprite2D" parent="Piso"]
-position = Vector2(575.5, 616)
-scale = Vector2(5.48095, 1)
+position = Vector2(581, 616)
+scale = Vector2(4.5619, 1)
 texture = ExtResource("3_o25w7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Piso"]
+position = Vector2(100.813, 0.000244141)
+scale = Vector2(0.858832, 1)
 polygon = PackedVector2Array(0, 586, 1152, 584, 1152, 646, 0, 647)
 
 [node name="Obstaculo1" type="StaticBody2D" parent="."]
